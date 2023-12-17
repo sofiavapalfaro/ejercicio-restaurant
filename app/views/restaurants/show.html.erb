@@ -1,0 +1,12 @@
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.adress %></p>
+<p><%= @restaurant.rating %></p>
+<p><%= @restaurant.category %></p>
+<hr>
+<% @restaurant.dishes.each do |dish| %>
+  <p><%= dish.name %>  | $<%= dish.price %>  |  <%= dish.description %></p>
+<% end %>
+<hr>
+<p><%= link_to 'Edit Restaurant', edit_restaurant_path %>  |   <%= link_to 'Back to restaurants', restaurants_path %>  |   <%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant)  %></p>
+<p><%=button_to 'Delete this restaurant', @restaurant, method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+   %> </p>

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  monday: 2023-12-17 11:29:31
+  tuesday: 2023-12-17 11:29:31
+  wednesday: 2023-12-17 11:29:31
+  thursday: 2023-12-17 11:29:31
+  friday: 2023-12-17 11:29:31
+  saturday: 2023-12-17 11:29:31
+  sunday: 2023-12-17 11:29:31
+  restaurant: one
+
+two:
+  monday: 2023-12-17 11:29:31
+  tuesday: 2023-12-17 11:29:31
+  wednesday: 2023-12-17 11:29:31
+  thursday: 2023-12-17 11:29:31
+  friday: 2023-12-17 11:29:31
+  saturday: 2023-12-17 11:29:31
+  sunday: 2023-12-17 11:29:31
+  restaurant: two
