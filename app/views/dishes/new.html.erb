@@ -1,7 +1,11 @@
+<p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class:'btn btn-secondary' %></p>
+<hr>
 <h1>New Dish</h1>
 <%= simple_form_for([@restaurant, @dish]) do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :description %>
+ <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
+

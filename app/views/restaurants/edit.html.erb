@@ -1,3 +1,5 @@
+<%= link_to 'Back to restaurants', restaurants_path, class:'btn btn-secondary'  %>
+<hr>
 <%if flash[:notice].present? %>
 <div class= 'alert alert-success'>
 <%= flash[:notice] %>
@@ -11,5 +13,4 @@
   <%= f.input :category %>
   <%= f.submit %>
 <% end %>
-<hr>
-<%= link_to 'Back to restaurants', restaurants_path %>
+

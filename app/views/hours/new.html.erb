@@ -1,2 +1,13 @@
-<h1>Hours#new</h1>
-<p>Find me in app/views/hours/new.html.erb</p>
+<p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class:'btn btn-secondary' %></p>
+<hr>
+<h1>Hours</h1>
+<%= simple_form_for([@restaurant, @hour]) do |f| %>
+  <%= f.input :monday %>
+  <%= f.input :tuesday %>
+  <%= f.input :wednesday %>
+  <%= f.input :thursday %>
+  <%= f.input :friday %>
+  <%= f.input :saturday %>
+  <%= f.input :sunday %>
+  <%= f.submit %>
+<% end %>

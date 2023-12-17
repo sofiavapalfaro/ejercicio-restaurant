@@ -32,6 +32,8 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    @restaurant.dishes.destroy_all
+    @restaurant.hours.destroy_all
     @restaurant.destroy
     redirect_to restaurants_path, status: :see_other
   end

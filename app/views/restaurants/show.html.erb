@@ -1,12 +1,25 @@
+
+<p><%= link_to 'Back to restaurants', restaurants_path, class:'btn btn-secondary' %></p>
+<hr>
+<div class= container>
 <h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.adress %></p>
-<p><%= @restaurant.rating %></p>
-<p><%= @restaurant.category %></p>
+<p><strong> Address:</strong> <%= @restaurant.adress %></p>
+<p><strong> Rating: </strong><%= @restaurant.rating %></p>
+<p><strong>Category:</strong> <%= @restaurant.category %></p>
+</div>
 <hr>
+<div class= container>
 <% @restaurant.dishes.each do |dish| %>
-  <p><%= dish.name %>  | $<%= dish.price %>  |  <%= dish.description %></p>
+  <p><%= dish.name %><strong>  | </strong>$<%= dish.price %><strong>  |  </strong><%= dish.description %>
+<% if dish.photo.attached? %>
+      <%= cl_image_tag dish.photo.key, height: 200, width: 250 %>
+    <% end %>
+  </p>
 <% end %>
+</div>
 <hr>
-<p><%= link_to 'Edit Restaurant', edit_restaurant_path %>  |   <%= link_to 'Back to restaurants', restaurants_path %>  |   <%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant)  %></p>
-<p><%=button_to 'Delete this restaurant', @restaurant, method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+<div class= container>
+<p><%= link_to 'Edit Restaurant', edit_restaurant_path %><strong>   |   </strong><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant)%><strong>  |    </strong><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant) %></p>
+<p><%=button_to 'Delete this restaurant', @restaurant, method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-primary'
    %> </p>
+</div>
