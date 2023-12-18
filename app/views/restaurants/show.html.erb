@@ -9,6 +9,7 @@
 </div>
 <hr>
 <div class= container>
+<h4>Dishes</h4>
 <% @restaurant.dishes.each do |dish| %>
   <p><%= dish.name %><strong>  | </strong>$<%= dish.price %><strong>  |  </strong><%= dish.description %>
 <% if dish.photo.attached? %>
@@ -18,8 +19,42 @@
 <% end %>
 </div>
 <hr>
+<div class="container">
+  <h4>Hours</h4>
+  <% @restaurant.hours.each do |hour| %>
+    <p>
+     <strong>Monday:</strong>
+     <%= hour.monday %> - <%= hour.monday_closing %>
+    </p>
+    <p>
+     <strong>Tuesday:</strong>
+     <%= hour.tuesday %> - <%= hour.tuesday_closing %>
+    </p>
+     <p>
+     <strong>Wednesday:</strong>
+     <%= hour.wednesday %> - <%= hour.wednesday_closing %>
+    </p>
+     <p>
+     <strong>Thursday:</strong>
+     <%= hour.thursday %> - <%= hour.thursday_closing %>
+    </p>
+     <p>
+     <strong>Friday:</strong>
+     <%= hour.friday %> - <%= hour.friday_closing %>
+    </p>
+     <p>
+     <strong>Saturday:</strong>
+     <%= hour.saturday %> - <%= hour.saturday_closing %>
+    </p>
+     <p>
+     <strong>Sunday:</strong>
+     <%= hour.sunday %> - <%= hour.sunday_closing %>
+    </p>
+  <% end %>
+</div>
+<hr>
 <div class= container>
-<p><%= link_to 'Edit Restaurant', edit_restaurant_path %><strong>   |   </strong><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant)%><strong>  |    </strong><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant) %></p>
+<p> <%= link_to 'Edit Restaurant', edit_restaurant_path %><strong>   |   </strong><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant)%><strong>  |    </strong><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant) %></p>
 <p><%=button_to 'Delete this restaurant', @restaurant, method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'
    %> </p>
 </div>

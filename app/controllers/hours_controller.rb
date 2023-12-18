@@ -31,6 +31,6 @@ class HoursController < ApplicationController
 
   private
   def hour_params
-    params.require(:hour).permit(:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
+    params.require(:hour).permit(:monday, :monday_closing, :tuesday, :tuesday_closing, :wednesday, :wednesday_closing, :thursday, :thursday_closing, :friday, :friday_closing, :saturday, :saturday_closing, :sunday, :sunday_closing)
   end
 end
