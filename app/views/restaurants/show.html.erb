@@ -54,7 +54,7 @@
 </div>
 <hr>
 <div class= container>
-<p> <%= link_to 'Edit Restaurant', edit_restaurant_path %><strong>   |   </strong><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant)%><strong>  |    </strong><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant) %></p>
+<p> <%= link_to 'Edit Restaurant', edit_restaurant_path, class: 'btn-btn'%><strong>   |   </strong><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant), class: 'btn-btn'%><strong>  |    </strong><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant), class: 'btn-btn' %></p>
 <p><%=button_to 'Delete this restaurant', @restaurant, method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'
    %> </p>
 </div>

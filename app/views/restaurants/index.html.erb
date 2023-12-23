@@ -1,10 +1,16 @@
-<div class= container >
-<h1>Restaurants</h1>
+
+<div class="container">
+  <h1>Restaurants</h1>
   <% @restaurants.each do |restaurant| %>
-    <p><%= link_to restaurant.name, restaurant_path(restaurant) %> |  <%= link_to 'Edit', edit_restaurant_path(restaurant) %> </p>
+    <p>
+      <%= link_to restaurant.name, restaurant_path(restaurant), class: "no-underline" %> |
+      <%= link_to edit_restaurant_path(restaurant) do %>
+      <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
+    </p>
   <% end %>
 </div>
 <hr>
-<div class= container>
-<p><%= link_to 'New restaurant', new_restaurant_path(@restaurant), class: 'btn btn-success'%></p>
+<div class="container">
+  <p><%= link_to 'New restaurant', new_restaurant_path(@restaurant), class: 'btn-btn' %></p>
 </div>

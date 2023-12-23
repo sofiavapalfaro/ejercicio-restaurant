@@ -1,4 +1,5 @@
-<%= link_to 'Back to restaurants', restaurants_path%>
+<div class="container-new-rest">
+<%= link_to 'Back to restaurants', restaurants_path, class:"btn-btn"%>
 <hr>
 <%if flash[:notice].present? %>
 <div class= 'alert alert-success'>
@@ -13,3 +14,4 @@
   <%= f.input :category %>
   <%= f.submit %>
 <% end %>
+</div>
