@@ -1,24 +1,37 @@
 
-<p><%= link_to 'Back to restaurants', restaurants_path, class:'btn btn-secondary' %></p>
+<p><%= link_to 'Back to Restaurants', restaurants_path, class:'btn btn-secondary' %></p>
 <hr>
 <div class= container>
 <h2><%= @restaurant.name %></h2>
 <p><strong> Address:</strong> <%= @restaurant.adress %></p>
 <p><strong> Rating: </strong><%= @restaurant.rating %></p>
 <p><strong>Category:</strong> <%= @restaurant.category %></p>
+<p> <%= link_to 'Edit Restaurant', edit_restaurant_path, class: 'btn-btn'%></p>
 </div>
 <hr>
-<div class= container>
-<h4>Dishes</h4>
-<% @restaurant.dishes.each do |dish| %>
-  <p><%= dish.name %><strong>  | </strong>$<%= dish.price %><strong>  |  </strong><%= dish.description %>
-<% if dish.photo.attached? %>
+
+<div class="card-product">
+  <% @restaurant.dishes.each do |dish| %>
+    <% if dish.photo.attached? %>
       <%= cl_image_tag dish.photo.key, height: 200, width: 250 %>
     <% end %>
-  </p>
-<% end %>
+
+    <div class="card-product-infos">
+      <h4>Dishes</h4>
+
+      <p>
+        <%= dish.name %><strong> | </strong>$<%= dish.price %><strong> | </strong><%= dish.description %>
+      </p>
+    </div>
+  <% end %>
+</div>
+<div class="container">
+<p><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant), class: 'btn-btn' %></p>
 </div>
 <hr>
+
+
+
 <div class="container">
   <h4>Hours</h4>
   <% @restaurant.hours.each do |hour| %>
@@ -51,10 +64,11 @@
      <%= hour.sunday %> - <%= hour.sunday_closing %>
     </p>
   <% end %>
+  <p><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant), class: 'btn-btn' %></p>
 </div>
 <hr>
+
 <div class= container>
-<p> <%= link_to 'Edit Restaurant', edit_restaurant_path, class: 'btn-btn'%><strong>   |   </strong><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant), class: 'btn-btn'%><strong>  |    </strong><%=link_to 'Restaurant hours', new_restaurant_hour_path(@restaurant), class: 'btn-btn' %></p>
 <p><%=button_to 'Delete this restaurant', @restaurant, method: :delete,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-danger'
    %> </p>
 </div>
