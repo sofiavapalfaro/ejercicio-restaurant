@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @restaurants = Restaurant.all
   end
@@ -45,5 +47,9 @@ class RestaurantsController < ApplicationController
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:id])
+    if @restaurant.nil?
+      flash[:alert] = "Restaurant not found"
+      redirect_to root_path
+    end
   end
 end

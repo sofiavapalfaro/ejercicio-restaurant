@@ -10,23 +10,23 @@
 </div>
 <hr>
 
-<div class="card-product">
+<div class="container">
   <% @restaurant.dishes.each do |dish| %>
-    <% if dish.photo.attached? %>
-      <%= cl_image_tag dish.photo.key, height: 200, width: 250 %>
-    <% end %>
+    <div class="card-product">
+      <% if dish.photo.attached? %>
+        <%= cl_image_tag dish.photo.key, height: 200, width: 250 %>
+      <% end %>
 
-    <div class="card-product-infos">
-      <h4>Dishes</h4>
-
-      <p>
-        <%= dish.name %><strong> | </strong>$<%= dish.price %><strong> | </strong><%= dish.description %>
-      </p>
-    </div>
-  <% end %>
+      <div class="card-product-infos">
+        <h4><%= dish.name %></h4>
+        <p> $<%= dish.price %> </p>
+        <p> <%= dish.description %></p>
+      </div>
+   </div>
+ <% end %>
 </div>
 <div class="container">
-<p><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant), class: 'btn-btn' %></p>
+ <p><%= link_to 'Add a dish', new_restaurant_dish_path(@restaurant), class: 'btn-btn' %></p>
 </div>
 <hr>
 
