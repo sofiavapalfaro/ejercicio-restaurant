@@ -1,4 +1,4 @@
-<p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class:'btn btn-secondary' %></p>
+<p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class: 'btn btn-secondary' %></p>
 <hr>
 <h1>Hours</h1>
 <%= simple_form_for([@restaurant, @hour]) do |f| %>
@@ -8,42 +8,42 @@
       <%= f.input :monday, label: 'Opening' %>
       <%= f.input :monday_closing, label: 'Closing' %>
     </div>
-     <div class="col">
+    <div class="col">
       <h4>Tuesday</h4>
       <%= f.input :tuesday, label: 'Opening' %>
       <%= f.input :tuesday_closing, label: 'Closing' %>
     </div>
- </div>
- <div class="row">
+  </div>
+  <div class="row">
     <div class="col">
       <h4>Wednesday</h4>
       <%= f.input :wednesday, label: 'Opening' %>
       <%= f.input :wednesday_closing, label: 'Closing' %>
     </div>
-     <div class="col">
+    <div class="col">
       <h4>Thursday</h4>
       <%= f.input :thursday, label: 'Opening' %>
       <%= f.input :thursday_closing, label: 'Closing' %>
     </div>
- </div>
+  </div>
   <div class="row">
     <div class="col">
       <h4>Friday</h4>
       <%= f.input :friday, label: 'Opening' %>
       <%= f.input :friday_closing, label: 'Closing' %>
     </div>
-     <div class="col">
+    <div class="col">
       <h4>Saturday</h4>
       <%= f.input :saturday, label: 'Opening' %>
       <%= f.input :saturday_closing, label: 'Closing' %>
     </div>
- </div>
- <div class="row">
+  </div>
+  <div class="row">
     <div class="col">
       <h4>Sunday</h4>
       <%= f.input :sunday, label: 'Opening' %>
       <%= f.input :sunday_closing, label: 'Closing' %>
     </div>
- </div>
+  </div>
   <%= f.submit 'Add Schedule' %>
 <% end %>

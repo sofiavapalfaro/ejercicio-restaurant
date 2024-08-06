@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_27_030156) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_06_173449) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_030156) do
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "monday_closing"
+    t.time "tuesday_closing"
+    t.time "wednesday_closing"
+    t.time "thursday_closing"
+    t.time "friday_closing"
+    t.time "saturday_closing"
+    t.time "sunday_closing"
     t.index ["restaurant_id"], name: "index_hours_on_restaurant_id"
   end
 
