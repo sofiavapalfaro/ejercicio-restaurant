@@ -70,12 +70,15 @@
       <%= hour.sunday_closing.present? ? hour.sunday_closing.strftime("%I:%M %p") : 'Closed' %>
     </p>
 
-    <%= link_to edit_restaurant_hour_path(@restaurant, hour) do  %>
-        <i class="fa-solid fa-pen-to-square"></i>
-    <% end %>
-    <%= button_to restaurant_hour_path(@restaurant, hour), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this hour?' }, class: 'lil-button' do %>
-      <i class="fa-solid fa-trash"></i>
-    <% end %>
+    <p>
+      <%= link_to edit_restaurant_hour_path(@restaurant, hour), class: 'lil-button' do  %>
+          <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
+      <%= button_to restaurant_hour_path(@restaurant, hour), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this hour?' }, class: 'lil-button' do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+    </p>
+
   <% end %>
   <p><%= link_to 'Add Hours', new_restaurant_hour_path(@restaurant), class: 'btn btn-primary' %></p>
 </div>

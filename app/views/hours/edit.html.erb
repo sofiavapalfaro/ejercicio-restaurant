@@ -1,2 +1,53 @@
-<h1>Hours#edit</h1>
-<p>Find me in app/views/hours/edit.html.erb</p>
+
+<p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class: 'btn btn-secondary' %></p>
+
+<%= simple_form_for([@restaurant, @hour]) do |f| %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="narrow-column">Working Days</th>
+        <th class="narrow-column">Opening Time</th>
+        <th class="narrow-column">Closing Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Monday</strong></td>
+        <td class="narrow-column"><%= f.time_field :monday, class: 'form-control', value: @hour.monday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :monday_closing, class: 'form-control', value: @hour.monday_closing&.strftime("%H:%M") %></td>
+
+      </tr>
+      <tr>
+        <td><strong>Tuesday</strong></td>
+        <td class="narrow-column"><%= f.time_field :tuesday, class: 'form-control', value: @hour.tuesday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :tuesday_closing, class: 'form-control', value: @hour.tuesday_closing&.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <td><strong>Wednesday</strong></td>
+        <td class="narrow-column"><%= f.time_field :wednesday, class: 'form-control', value: @hour.wednesday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :wednesday_closing, class: 'form-control', value: @hour.wednesday_closing&.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <td><strong>Thursday</strong></td>
+        <td class="narrow-column"><%= f.time_field :thursday, class: 'form-control', value: @hour.thursday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :thursday_closing, class: 'form-control', value: @hour.thursday_closing&.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <td><strong>Friday</strong></td>
+        <td class="narrow-column"><%= f.time_field :friday, class: 'form-control', value: @hour.friday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :friday_closing, class: 'form-control', value: @hour.friday_closing&.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <td><strong>Saturday</strong></td>
+        <td class="narrow-column"><%= f.time_field :saturday, class: 'form-control', value: @hour.saturday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :saturday_closing, class: 'form-control', value: @hour.saturday_closing&.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <td><strong>Sunday</strong></td>
+        <td class="narrow-column"><%= f.time_field :sunday, class: 'form-control', value: @hour.sunday&.strftime("%H:%M") %></td>
+        <td class="narrow-column"><%= f.time_field :sunday_closing, class: 'form-control', value: @hour.sunday_closing&.strftime("%H:%M") %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= f.submit 'Update Schedule', class: 'btn btn-primary' %>
+<% end %>

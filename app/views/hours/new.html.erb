@@ -1,49 +1,53 @@
 <p><%= link_to 'Back to restaurant', restaurant_path(@restaurant), class: 'btn btn-secondary' %></p>
-<hr>
-<h1>Hours</h1>
+
+
+
 <%= simple_form_for([@restaurant, @hour]) do |f| %>
-  <div class="row">
-    <div class="col">
-      <h4>Monday</h4>
-      <%= f.input :monday, label: 'Opening' %>
-      <%= f.input :monday_closing, label: 'Closing' %>
-    </div>
-    <div class="col">
-      <h4>Tuesday</h4>
-      <%= f.input :tuesday, label: 'Opening' %>
-      <%= f.input :tuesday_closing, label: 'Closing' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4>Wednesday</h4>
-      <%= f.input :wednesday, label: 'Opening' %>
-      <%= f.input :wednesday_closing, label: 'Closing' %>
-    </div>
-    <div class="col">
-      <h4>Thursday</h4>
-      <%= f.input :thursday, label: 'Opening' %>
-      <%= f.input :thursday_closing, label: 'Closing' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4>Friday</h4>
-      <%= f.input :friday, label: 'Opening' %>
-      <%= f.input :friday_closing, label: 'Closing' %>
-    </div>
-    <div class="col">
-      <h4>Saturday</h4>
-      <%= f.input :saturday, label: 'Opening' %>
-      <%= f.input :saturday_closing, label: 'Closing' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4>Sunday</h4>
-      <%= f.input :sunday, label: 'Opening' %>
-      <%= f.input :sunday_closing, label: 'Closing' %>
-    </div>
-  </div>
-  <%= f.submit 'Add Schedule' %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Working Days</th>
+        <th class="narrow-column">Opening Time</th>
+        <th class="narrow-column">Closing Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Monday</strong></td>
+        <td class="narrow-column"><%= f.input :monday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :monday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+      <tr>
+        <td><strong>Tuesday</strong></td>
+        <td class="narrow-column"><%= f.input :tuesday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :tuesday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+      <tr>
+        <td><strong>Wednesday</strong></td>
+        <td class="narrow-column"><%= f.input :wednesday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :wednesday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+      <tr>
+        <td><strong>Thursday</strong></td>
+        <td class="narrow-column"><%= f.input :thursday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :thursday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+      <tr>
+        <td><strong>Friday</strong></td>
+        <td class="narrow-column"><%= f.input :friday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :friday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+      <tr>
+        <td><strong>Saturday</strong></td>
+        <td class="narrow-column"><%= f.input :saturday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :saturday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+      <tr>
+        <td><strong>Sunday</strong></td>
+        <td class="narrow-column"><%= f.input :sunday, label: false, input_html: { class: 'form-control' } %></td>
+        <td class="narrow-column"><%= f.input :sunday_closing, label: false, input_html: { class: 'form-control' } %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= f.submit 'Add Schedule', class: 'btn btn-primary' %>
 <% end %>
