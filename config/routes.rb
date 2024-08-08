@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :dishes, only: [:show, :edit, :update, :destroy]
   # Defines the root path route ("/")
   # root "posts#index"
-  resource :profile, only: [:show]
+  resource :profile, only: [:show, :update]
 end

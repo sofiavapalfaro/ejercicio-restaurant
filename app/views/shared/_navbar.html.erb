@@ -19,8 +19,12 @@
           </li>
           <li class="nav-item">
             <%= link_to profile_path, class: 'nav-link' do %>
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar rounded-circle", style: "width: 40px; height: 40px;" %>
-            <% end %>
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar rounded-circle", style: "width: 47px; height: 47px;" %>
+              <% else %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar rounded-circle", style: "width: 47px; height: 47px;" %>
+              <% end %>
+             <% end %>
           </li>
         <% else %>
           <li class="nav-item">
